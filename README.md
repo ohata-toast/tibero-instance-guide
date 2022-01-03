@@ -1,1 +1,0 @@
-tibero-instance-guide
