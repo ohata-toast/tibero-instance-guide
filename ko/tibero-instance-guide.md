@@ -55,7 +55,7 @@ root 볼륨 이외의 추가 볼륨을 생성합니다.
 위 정보를 모두 입력 후 인스턴스 생성 버튼을 누르면 아래와 같이 인스턴스가 생성됩니다.
 생성된 인스턴스는 데이터베이스 생성을 위한 설치파일이 포함되며 실제 설치와 데이터베이스 생성은 SSH 클라이언트 접속하여 TMI 설치과정을 수행해야 합니다.
 
-### ![image.png](/files/3184955716482441473)
+![image.png](http://static.toastoven.net/prod_tibero/tibero_image9.png)
 <br>
 ## TMI(Tibero Machine Image) 설치
 <br>
@@ -64,7 +64,7 @@ root 볼륨 이외의 추가 볼륨을 생성합니다.
 <span style="color:#313338">인스턴스 생성 완료 후 SSH를 사용하여 인스턴스에 접근합니다.</span>
 인스턴스에 Floating IP가 연결되어 있어야 하며 보안 그룹에서 TCP 포트 22(SSH)가 허용되어야 합니다.
 
-![image.png](http://static.toastoven.net/prod_tibero/tibero_image9.png)
+![image.png](http://static.toastoven.net/prod_tibero/tibero_image10.png)
 
 <span style="color:#313338">SSH 클라이언트와 설정한 키페어를 이용해 인스턴스에 접속합니다.</span>
 SSH 연결에 대한 자세한 가이드는 [SSH 연결 가이드](https://docs.toast.com/ko/Compute/Instance/ko/overview/#linux)<span style="color:#313338">를 참고하시기 바랍니다.</span>
