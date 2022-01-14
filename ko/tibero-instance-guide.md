@@ -1,5 +1,7 @@
 ## Tibero Instance 생성
+
 <br>
+
 Tibero<span style="color:#313338">를 사용하려면 먼저 인스턴스를 생성해야 합니다.</span>
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image1.png)
@@ -7,14 +9,20 @@ Tibero<span style="color:#313338">를 사용하려면 먼저 인스턴스를 �
 <span style="color:#313338">**Tibero Instance 생성**에 있는 **생성** 버튼을 클릭하면 **Compute > Instance > 인스턴스 생성**으로 이동합니다.</span>
 
 <br>
+
 ### 이미지
+
 <br>
 기본 제공되는 이미지는 CentOS 7.8 with Tibero 6 버전(Tibero 6 FS07 CS2005 build194603 r144754)이 포함됩니다.
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image2.png)
+
 <br>
+
 ### 인스턴스 정보
+
 <br>
+
 * 가용성 영역 : 임의의 가용성 영역 선택
 * 인스턴스 이름 : 생성되는 서버의 인스턴스 이름
 * 인스턴스 타입
@@ -25,23 +33,32 @@ Tibero<span style="color:#313338">를 사용하려면 먼저 인스턴스를 �
     * root Full이 발생하지 않도록 최소 50GB 이상 설정
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image3.png)
+
 <br>
+
 ### 네트워크
+
 <br>
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image4.png)
 
 <br>
+
 ### 플로팅IP
+
 <br>
+
 ssh 접속을 위해 플로팅 IP를 사용합니다.
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image5.png)
 
 <br>
 <br>
+
 ### 보안그룹
+
 <br>
+
 인스턴스에 ssh 로 접속을 필요하므로 ssh 포트(22) 접근을 허용한 보안그룹 생성하여 사용하여야 합니다.
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image6.png)
@@ -49,7 +66,9 @@ ssh 접속을 위해 플로팅 IP를 사용합니다.
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image7.png)
 
 <br>
+
 ### 추가 블록 스토리지
+
 <br>
 root 볼륨 이외의 추가 볼륨을 생성합니다.
 <span style="color:#000">TMI 는 추가볼륨 150GB 를 요구하기 때문에 </span>**<span style="color:#000">추가 블록 스토리지 150G 이상</span>**<span style="color:#000">을 반드시 설정해야 합니다.</span><span style="color:#000"></span>
@@ -57,7 +76,9 @@ root 볼륨 이외의 추가 볼륨을 생성합니다.
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image8.png)
 
 <br>
+
 ### 인스턴스 생성 완료
+
 <br>
 위 정보를 모두 입력 후 인스턴스 생성 버튼을 누르면 아래와 같이 인스턴스가 생성됩니다.
 생성된 인스턴스는 데이터베이스 생성을 위한 설치파일이 포함되며 실제 설치와 데이터베이스 생성은 SSH 클라이언트 접속하여 TMI 설치과정을 수행해야 합니다.
@@ -65,9 +86,13 @@ root 볼륨 이외의 추가 볼륨을 생성합니다.
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image9.png)
 
 <br>
+
 ## TMI(Tibero Machine Image) 설치
+
 <br>
+
 ### 인스턴스 접속
+
 <br>
 <span style="color:#313338">인스턴스 생성 완료 후 SSH를 사용하여 인스턴스에 접근합니다.</span>
 인스턴스에 Floating IP가 연결되어 있어야 하며 보안 그룹에서 TCP 포트 22(SSH)가 허용되어야 합니다.
@@ -77,11 +102,14 @@ root 볼륨 이외의 추가 볼륨을 생성합니다.
 <span style="color:#313338">SSH 클라이언트와 설정한 키페어를 이용해 인스턴스에 접속합니다.</span>
 SSH 연결에 대한 자세한 가이드는 [SSH 연결 가이드](https://docs.toast.com/ko/Compute/Instance/ko/overview/#linux)<span style="color:#313338">를 참고하시기 바랍니다.</span>
 <br>
+
 ### TMI설치
+
 <br>
 root 계정으로 /root 경로에서 dbca 명령어를 실행합니다.
 $ \./dbca &#91;OS\_ACCOUNT&#93; &#91;DB\_NAME&#93; &#91;DB\_CHARACTERSET&#93; &#91;DB\_PORT&#93;
 <br>
+
 ```
 [centos@tiberoinstance ~]$ sudo su root
 [root@tiberoinstance centos]# cd
@@ -89,6 +117,7 @@ $ \./dbca &#91;OS\_ACCOUNT&#93; &#91;DB\_NAME&#93; &#91;DB\_CHARACTERSET&#93; &#
 /root
 [root@tiberoinstance ~]# ./dbca nhncloud tiberotestdb utf8 8639
 ```
+
 <br>
 | No | 항목 | 인자값 |
 | :---: | --- | --- |
@@ -97,7 +126,9 @@ $ \./dbca &#91;OS\_ACCOUNT&#93; &#91;DB\_NAME&#93; &#91;DB\_CHARACTERSET&#93; &#
 | 3 | DB\_CHARACTERSET | TIBERO에서 사용하는 DB 캐릭터셋 |
 | 4 | DB\_PORT | TIBERO에서 사용하는 서비스 IP의 PORT |
 <br>
+
 ### 설치완료
+
 <br>
 dbca 명령어 수행시 진행상황이 출력되며 nomount 모드에서 database가 생성됩니다. 소요시간은 10분 이하입니다. 완료되면 아래와 같이 출력됩니다.
 
@@ -113,7 +144,9 @@ SQL> Disconnected.
 ```
 
 <br>
+
 ### 기동확인 및 설치로그 확인
+
 <br>
 티베로가 기동중인지 확인합니다.
 
@@ -155,8 +188,11 @@ drwx------   2 root root   29  1월  4 16:58 .ssh
 ```
 
 ## Tibero 접속
+
 <br>
+
 ### 계정변경
+
 <br>
 dbca 명령어로 생성한 OS\_ACCOUNT로 로그인 합니다.
 
@@ -175,7 +211,9 @@ dbca 명령어로 생성한 OS\_ACCOUNT로 로그인 합니다.
 [nhncloud@tiberoinstance ~]$
 ```
 <br>
+
 ### 접속확인
+
 <br>
 
 ```
