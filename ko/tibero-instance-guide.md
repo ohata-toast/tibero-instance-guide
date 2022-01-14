@@ -94,8 +94,6 @@ $ \./dbca &#91;OS\_ACCOUNT&#93; &#91;DB\_NAME&#93; &#91;DB\_CHARACTERSET&#93; &#
 dbca 명령어 수행시 진행상황이 출력되며 nomount 모드에서 database가 생성됩니다. 소요시간은 10분 이하입니다. 완료되면 아래와 같이 출력됩니다.
 
 ```
-... 생략 ...
-
 SQL>
 System altered.
 
@@ -105,6 +103,7 @@ System altered.
 SQL> Disconnected.
 [root@tiberoinstance ~]#
 ```
+
 <br>
 ### 기동확인 및 설치로그 확인
 <br>
@@ -127,6 +126,7 @@ nhncloud 13954 13933  0 09:10 ?        00:00:00 tbsvr_RCWP     -t NORMAL -SVR_SI
 root     21066 12596  0 11:06 pts/0    00:00:00 grep --color=auto tbsvr
 [root@tiberoinstance ~]#
 ```
+
 <br>
 설치로그는 /root/.dbset.log에서 확인이 가능합니다.
 
@@ -169,6 +169,7 @@ dbca 명령어로 생성한 OS\_ACCOUNT로 로그인 합니다.
 <br>
 ### 접속확인
 <br>
+
 ```
 [nhncloud@tiberoinstance ~]$ tbsql sys/tibero
 
@@ -207,6 +208,7 @@ NORMAL           NO
 
 SQL>
 ```
+
 <br>
 ### Tibero 기본계정
 <br>
