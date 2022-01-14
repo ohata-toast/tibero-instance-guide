@@ -1,6 +1,7 @@
 ## Tibero Instance 생성
 <br>
 Tibero<span style="color:#313338">를 사용하려면 먼저 인스턴스를 생성해야 합니다.</span>
+
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image1.png)
 
 <span style="color:#313338">**Tibero Instance 생성**에 있는 **생성** 버튼을 클릭하면 **Compute > Instance > 인스턴스 생성**으로 이동합니다.</span>
