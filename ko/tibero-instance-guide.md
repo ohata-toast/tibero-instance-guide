@@ -27,12 +27,14 @@ Tibero<span style="color:#313338">를 사용하려면 먼저 인스턴스를 �
 <br>
 ### 네트워크
 <br>
+
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image4.png)
 
 <br>
 ### 플로팅IP
 <br>
 ssh 접속을 위해 플로팅 IP를 사용합니다.
+
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image5.png)
 
 <br>
@@ -40,8 +42,11 @@ ssh 접속을 위해 플로팅 IP를 사용합니다.
 ### 보안그룹
 <br>
 인스턴스에 ssh 로 접속을 필요하므로 ssh 포트(22) 접근을 허용한 보안그룹 생성하여 사용하여야 합니다.
+
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image6.png)
+
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image7.png)
+
 <br>
 ### 추가 블록 스토리지
 <br>
@@ -49,6 +54,7 @@ root 볼륨 이외의 추가 볼륨을 생성합니다.
 <span style="color:#000">TMI 는 추가볼륨 150GB 를 요구하기 때문에 </span>**<span style="color:#000">추가 블록 스토리지 150G 이상</span>**<span style="color:#000">을 반드시 설정해야 합니다.</span><span style="color:#000"></span>
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image8.png)
+
 <br>
 ### 인스턴스 생성 완료
 <br>
@@ -56,6 +62,7 @@ root 볼륨 이외의 추가 볼륨을 생성합니다.
 생성된 인스턴스는 데이터베이스 생성을 위한 설치파일이 포함되며 실제 설치와 데이터베이스 생성은 SSH 클라이언트 접속하여 TMI 설치과정을 수행해야 합니다.
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image9.png)
+
 <br>
 ## TMI(Tibero Machine Image) 설치
 <br>
