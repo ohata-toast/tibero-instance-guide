@@ -13,7 +13,7 @@ Tibero<span style="color:#313338">를 사용하려면 먼저 인스턴스를 �
 ### 이미지
 
 <br>
-기본 제공되는 이미지는 CentOS 7.8 with Tibero 6 버전(Tibero 6 FS07 CS2005 build194603 r144754)이 포함됩니다.
+기본 제공되는 이미지에는 CentOS 7.8 with Tibero 6 버전(Tibero 6 FS07 CS2005 build194603 r144754)이 포함됩니다.
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image2.png)
 
@@ -23,11 +23,11 @@ Tibero<span style="color:#313338">를 사용하려면 먼저 인스턴스를 �
 
 <br>
 
-* 가용성 영역 : 임의의 가용성 영역 선택
-* 인스턴스 이름 : 생성되는 서버의 인스턴스 이름
+* 가용성 영역:임의의 가용성 영역 선택
+* 인스턴스 이름:생성되는 서버의 인스턴스 이름
 * 인스턴스 타입
-    * 티베로를 사용하기 위한 <b><span style="color:#e11d21">최소 권장사양</span><span style="color:#000000">은 2vCPU 8G Memory </span></b>이므로 권장사양 이상의 스펙을 선택. <span style="color:#e11d21">이하 스펙에서는 정상적으로 생성되지 않을 수 있음.</span>
-* 키페어 : Pem key를 새로 생성하거나 기존 Key를 사용. 새로 생성하는 경우 다운로드하여 보관
+    * Tibero를 사용하기 위한 <b><span style="color:#e11d21">최소 권장 사양</span><span style="color:#000000">은 2vCPU 8G Memory </span></b>이므로 권장사양 이상의 스펙을 선택. <span style="color:#e11d21">이하 스펙에서는 정상적으로 생성되지 않을 수 있음.</span>
+* 키페어:PEM 키를 새로 생성하거나 기존 키를 사용. 새로 생성하는 경우 다운로드하여 보관
 * 블록 스토리지 타입
     * root 볼륨. 빠른 속도를 위해 SSD를 권장
     * root Full이 발생하지 않도록 최소 50GB 이상 설정
@@ -48,18 +48,18 @@ Tibero<span style="color:#313338">를 사용하려면 먼저 인스턴스를 �
 
 <br>
 
-ssh 접속을 위해 플로팅 IP를 사용합니다.
+SSH 접속을 위해 플로팅IP를 사용합니다.
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image5.png)
 
 <br>
 <br>
 
-### 보안그룹
+### 보안 그룹
 
 <br>
 
-인스턴스에 ssh 로 접속을 필요하므로 ssh 포트(22) 접근을 허용한 보안그룹 생성하여 사용하여야 합니다.
+인스턴스에 SSH로 접속이 필요하므로 SSH 포트(22) 접근을 허용한 보안그룹을 생성해 사용하여야 합니다.
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image6.png)
 
@@ -71,7 +71,7 @@ ssh 접속을 위해 플로팅 IP를 사용합니다.
 
 <br>
 root 볼륨 이외의 추가 볼륨을 생성합니다.
-<span style="color:#000">TMI 는 추가볼륨 150GB 를 요구하기 때문에 </span>**<span style="color:#000">추가 블록 스토리지 150G 이상</span>**<span style="color:#000">을 반드시 설정해야 합니다.</span><span style="color:#000"></span>
+<span style="color:#000">TMI(Tibero Machine Image)는 추가 볼륨 150GB 를 요구하기 때문에 </span>**<span style="color:#000">추가 블록 스토리지 150G 이상</span>**<span style="color:#000">을 반드시 설정해야 합니다.</span><span style="color:#000"></span>
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image8.png)
 
@@ -81,13 +81,13 @@ root 볼륨 이외의 추가 볼륨을 생성합니다.
 
 <br>
 위 정보를 모두 입력 후 인스턴스 생성 버튼을 누르면 아래와 같이 인스턴스가 생성됩니다.
-생성된 인스턴스는 데이터베이스 생성을 위한 설치파일이 포함되며 실제 설치와 데이터베이스 생성은 SSH 클라이언트 접속하여 TMI 설치과정을 수행해야 합니다.
+생성된 인스턴스는 데이터베이스 생성을 위한 설치 파일이 포함되며 실제 설치와 데이터베이스 생성은 SSH 클라이언트 접속하여 TMI 설치과정을 수행해야 합니다.
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image9.png)
 
 <br>
 
-## TMI(Tibero Machine Image) 설치
+## TMI 설치
 
 <br>
 
@@ -95,7 +95,7 @@ root 볼륨 이외의 추가 볼륨을 생성합니다.
 
 <br>
 <span style="color:#313338">인스턴스 생성 완료 후 SSH를 사용하여 인스턴스에 접근합니다.</span>
-인스턴스에 Floating IP가 연결되어 있어야 하며 보안 그룹에서 TCP 포트 22(SSH)가 허용되어야 합니다.
+인스턴스에 플로팅 IP가 연결되어 있어야 하며 보안 그룹에서 TCP 포트 22(SSH)가 허용되어야 합니다.
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image10.png)
 
@@ -121,16 +121,16 @@ $ \./dbca &#91;OS\_ACCOUNT&#93; &#91;DB\_NAME&#93; &#91;DB\_CHARACTERSET&#93; &#
 <br>
 | No | 항목 | 인자값 |
 | :---: | --- | --- |
-| 1 | OS\_ACCOUNT | TIBERO가 구동되는 OS 계정 |
-| 2 | DB\_NAME | TIBERO에서 사용되는 DB\_NAME (= SID ) |
-| 3 | DB\_CHARACTERSET | TIBERO에서 사용하는 DB 캐릭터셋 |
-| 4 | DB\_PORT | TIBERO에서 사용하는 서비스 IP의 PORT |
+| 1 | OS\_ACCOUNT | Tibero가 구동되는 OS 계정 |
+| 2 | DB\_NAME | Tibero에서 사용되는 DB\_NAME (= SID ) |
+| 3 | DB\_CHARACTERSET | Tibero에서 사용하는 DB 문자 집합 |
+| 4 | DB\_PORT | Tibero에서 사용하는 서비스 IP의 포트 |
 <br>
 
 ### 설치완료
 
 <br>
-dbca 명령어 수행시 진행상황이 출력되며 nomount 모드에서 database가 생성됩니다. 소요시간은 10분 이하입니다. 완료되면 아래와 같이 출력됩니다.
+dbca 명령어 수행 시 진행 상황이 출력되며 nomount 모드에서 database가 생성됩니다. 소요 시간은 10분 이하입니다. 완료되면 아래와 같이 출력됩니다.
 
 ```
 SQL>
@@ -145,10 +145,10 @@ SQL> Disconnected.
 
 <br>
 
-### 기동확인 및 설치로그 확인
+### 구동 확인 및 설치 로그 확인
 
 <br>
-티베로가 기동중인지 확인합니다.
+Tibero가 구동 중인지 확인합니다.
 
 ```
 [root@tiberoinstance ~]# ps -ef | grep tbsvr
@@ -169,7 +169,7 @@ root     21066 12596  0 11:06 pts/0    00:00:00 grep --color=auto tbsvr
 ```
 
 <br>
-설치로그는 /root/.dbset.log에서 확인이 가능합니다.
+설치 로그는 /root/.dbset.log에서 확인이 가능합니다.
 
 ```
 [root@tiberoinstance ~]# ls -al
@@ -191,10 +191,10 @@ drwx------   2 root root   29  1월  4 16:58 .ssh
 
 <br>
 
-### 계정변경
+### 계정 변경
 
 <br>
-dbca 명령어로 생성한 OS\_ACCOUNT로 로그인 합니다.
+dbca 명령어로 생성한 OS\_ACCOUNT로 로그인합니다.
 
 ```
 [root@tiberoinstance ~]# su - nhncloud
@@ -212,7 +212,7 @@ dbca 명령어로 생성한 OS\_ACCOUNT로 로그인 합니다.
 ```
 <br>
 
-### 접속확인
+### 접속 확인
 
 <br>
 
@@ -260,7 +260,7 @@ SQL>
 <br>
 Tibero에서 제공하는 기본계정은 다음과 같습니다
 
-| 스키마 | 패스워드 | 설명 |
+| 스키마 | 비밀번호 | 설명 |
 | --- | --- | --- |
 | sys | tibero | SYSTEM 스키마 |
 | syscat | syscat | SYSTEM 스키마 |
@@ -269,8 +269,8 @@ Tibero에서 제공하는 기본계정은 다음과 같습니다
 | tibero | tmax | SAMPLE 스키마 DBA권한 |
 | tibero1 | tmax | SAMPLE 스키마 DBA권한 |
 
-* SYS: database의 관리자 task를 수행합니다.
-* SYSCAT: data dictionary & catalogview를 생성합니다.
-* OUTLN: 동일한 SQL 수행 시 항상 같은 plan으로 수행될 수 있게 관련 hint를 저장하는 등의 일을 수행합니다.
-* SYSGIS: GIS관련 table 생성 및 일을 수행하는 계정입니다.
+* SYS: 데이터베이스의 관리자 task를 수행합니다.
+* SYSCAT: DATA DICTIONARY & CATALOGVIEW를 생성합니다.
+* OUTLN: 동일한 SQL 수행 시 항상 같은 플랜으로 수행될 수 있게 관련 힌트를 저장하는 등의 태스크를 수행합니다.
+* SYSGIS: GIS관련 테이블 생성 및 태스크를 수행하는 계정입니다.
 * TIBERO/TIBERO1: example user이며 DBA 권한을 가지고 있습니다.
