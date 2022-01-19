@@ -20,7 +20,7 @@ Tibero를 사용하려면 먼저 인스턴스를 생성해야 합니다.
 * 가용성 영역: 임의의 가용성 영역 선택
 * 인스턴스 이름:생성되는 서버의 인스턴스 이름
 * 인스턴스 타입
-    * Tibero를 사용하기 위한 <b><span style="color:#e11d21">최소 권장 사양</span><span style="color:#000000">은 2vCPU 8G Memory </span></b>이므로 권장 사양 이상의 스펙을 선택. <span style="color:#e11d21">이하 스펙에서는 정상적으로 생성되지 않을 수 있음.</span>
+    * Tibero를 사용하기 위한 <b><span style="color:#e11d21">최소 권장 사양</span>은 2vCPU 8G Memory </b>이므로 권장 사양 이상의 스펙을 선택. <span style="color:#e11d21">이하 스펙에서는 정상적으로 생성되지 않을 수 있음.</span>
     * 최소 권장 사양은 2vCPU 8G Memory이나 단위로 과금되므로 8vVPU 8G Memory 이상을 선택.
 * 키페어: PEM 키를 새로 생성하거나 기존 키를 사용. 새로 생성하는 경우 다운로드하여 보관
 * 블록 스토리지 타입
@@ -59,8 +59,8 @@ root 볼륨 이외의 추가 볼륨을 생성합니다.
 
 ### 인스턴스 생성 완료
 
-위 정보를 모두 입력 후 인스턴스 생성 버튼을 누르면 아래와 같이 인스턴스가 생성됩니다.
-생성된 인스턴스는 데이터베이스 생성을 위한 설치 파일이 포함되며 실제 설치와 데이터베이스 생성은 SSH 클라이언트 접속하여 TMI 설치과정을 수행해야 합니다.
+위 정보를 모두 입력 후 **인스턴스 생성** 버튼을 누르면 아래와 같이 인스턴스가 생성됩니다.
+생성된 인스턴스에는 데이터베이스 생성을 위한 설치 파일이 포함되며, 실제 설치와 데이터베이스 생성은 SSH 클라이언트 접속하여 TMI 설치과정을 수행해야 합니다.
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image9.png)
 
@@ -236,8 +236,8 @@ Tibero에서 제공하는 기본 계정은 다음과 같습니다.
 | tibero | tmax | SAMPLE 스키마 DBA 권한 |
 | tibero1 | tmax | SAMPLE 스키마 DBA 권한 |
 
-* SYS: 데이터베이스의 관리자 task를 수행합니다.
+* SYS: 데이터베이스의 관리자 태스크를 수행합니다.
 * SYSCAT: DATA DICTIONARY & CATALOGVIEW를 생성합니다.
-* SYSGIS: GIS관련 테이블 생성 및 태스크를 수행하는 계정입니다.
+* SYSGIS: GIS 관련 테이블 생성 및 태스크를 수행하는 계정입니다.
 * OUTLN: 동일한 SQL 수행 시 항상 같은 플랜으로 수행될 수 있게 관련 힌트를 저장하는 등의 태스크를 수행합니다.
 * TIBERO/TIBERO1: example user이며 DBA 권한을 가지고 있습니다.
