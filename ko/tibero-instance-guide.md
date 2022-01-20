@@ -21,7 +21,7 @@ Tibero를 사용하려면 먼저 인스턴스를 생성해야 합니다.
 * 인스턴스 이름:생성되는 서버의 인스턴스 이름
 * 인스턴스 타입
     * Tibero를 사용하기 위한 <b><span style="color:#e11d21">최소 권장 사양</span>은 2vCPU 8G Memory </b>이므로 권장 사양 이상의 스펙을 선택. <span style="color:#e11d21">이하 스펙에서는 정상적으로 생성되지 않을 수 있음.</span>
-    * 최소 권장 사양은 2vCPU 8G Memory이나 단위로 과금되므로 8vVPU 8G Memory 이상을 선택.
+    * 최소 권장 사양은 2vCPU 8G Memory이나 8vCPU 단위로 과금되므로 8vVPU 8G Memory 이상을 선택.
 * 키페어: PEM 키를 새로 생성하거나 기존 키를 사용. 새로 생성하는 경우 다운로드하여 보관
 * 블록 스토리지 타입
     * root 볼륨. 빠른 속도를 위해 SSD를 권장
