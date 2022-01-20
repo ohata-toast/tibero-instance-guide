@@ -20,8 +20,7 @@ Tibero를 사용하려면 먼저 인스턴스를 생성해야 합니다.
 * 가용성 영역: 임의의 가용성 영역 선택
 * 인스턴스 이름:생성되는 서버의 인스턴스 이름
 * 인스턴스 타입
-    * Tibero를 사용하기 위한 <b><span style="color:#e11d21">최소 권장 사양</span>은 2vCPU 8G Memory </b>이므로 권장 사양 이상의 스펙을 선택. <span style="color:#e11d21">이하 스펙에서는 정상적으로 생성되지 않을 수 있음.</span>
-    * 최소 권장 사양은 2vCPU 8G Memory이나 단위로 과금되므로 8vVPU 8G Memory 이상을 선택.
+    * Tibero를 사용하기 위한 최소 권장 사양 8vCPU 8G Memory 이상을 선택.
 * 키페어: PEM 키를 새로 생성하거나 기존 키를 사용. 새로 생성하는 경우 다운로드하여 보관
 * 블록 스토리지 타입
     * root 볼륨. 빠른 속도를 위해 SSD를 권장
@@ -60,7 +59,7 @@ root 볼륨 이외의 추가 볼륨을 생성합니다.
 ### 인스턴스 생성 완료
 
 위 정보를 모두 입력 후 **인스턴스 생성** 버튼을 누르면 아래와 같이 인스턴스가 생성됩니다.
-생성된 인스턴스에는 데이터베이스 생성을 위한 설치 파일이 포함되며, 실제 설치와 데이터베이스 생성은 SSH 클라이언트 접속하여 TMI 설치과정을 수행해야 합니다.
+생성된 인스턴스에는 데이터베이스 생성을 위한 설치 파일이 포함되며, 실제 설치와 데이터베이스 생성은 SSH 클라이언트로 인스턴스에 접속하여 TMI 설치 과정을 수행해야 합니다.
 
 ![image.png](http://static.toastoven.net/prod_tibero/tibero_image9.png)
 
@@ -78,7 +77,7 @@ root 볼륨 이외의 추가 볼륨을 생성합니다.
 SSH 클라이언트와 설정한 키페어를 이용해 인스턴스에 접속합니다.
 SSH 연결에 대한 자세한 가이드는 [SSH 연결 가이드](https://docs.toast.com/ko/Compute/Instance/ko/overview/#linux)<span style="color:#313338">를 참고하시기 바랍니다.</span>
 
-### TMI설치
+### TMI 설치
 
 root 계정으로 /root 경로에서 dbca 명령어를 실행합니다.
 ```
@@ -101,7 +100,7 @@ $ ./dbca OS_ACCOUNT DB_NAME DB_CHARACTERSET DB_PORT
 | 3 | DB\_CHARACTERSET | Tibero에서 사용하는 DB 문자 집합 |
 | 4 | DB\_PORT | Tibero에서 사용하는 서비스 IP의 포트 |
 
-### 설치완료
+### 설치 완료
 
 dbca 명령어 수행 시 진행 상황이 출력되며 nomount 모드에서 database가 생성됩니다. 소요 시간은 10분 이하입니다. 완료되면 아래와 같이 출력됩니다.
 
